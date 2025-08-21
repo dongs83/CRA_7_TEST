@@ -1,6 +1,24 @@
 # CRA_7_TEST
 CRA_7_TEST
 
+D1 : O
+
+D2 : O
+
+D3 : O
+
+D4 : O
+
+D5 : O
+
+CODE COVERAGE
+<img width="1320" height="769" alt="image" src="https://github.com/user-attachments/assets/a0dea4a4-28e1-407e-bb97-15c38809d985" />
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 D1 (가독성있는 코드로메서드추상화, 가독성좋은네이밍사용)
 
 -> DONE
@@ -22,9 +40,3 @@ D4 (리팩토링에 디자인패턴을적용한다)
 D5 (리팩토링이 끝난코드에, 코드 커버리지가100% 되어야한다)
 
 -> DONE
-
-
-
-CODE COVERAGE
-<img width="1320" height="769" alt="image" src="https://github.com/user-attachments/assets/a0dea4a4-28e1-407e-bb97-15c38809d985" />
-
