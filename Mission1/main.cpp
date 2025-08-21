@@ -190,7 +190,6 @@ void addDataToList(string name, string day) {
 		weekend[idToAdd] += 1;
 	}
 
-	//사용자ID별 요일 데이터에 1씩 증가
 	dat[idToAdd][indexToAdd] += 1;
 	points[idToAdd] += pointToAdd;
 }
