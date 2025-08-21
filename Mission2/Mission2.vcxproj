@@ -124,13 +124,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="attendanceManager.cpp" />
+    <ClCompile Include="attendanceManager_test.cpp" />
     <ClCompile Include="grade.cpp" />
     <ClCompile Include="grade_test.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main.h" />
+    <ClInclude Include="attendanceManager.h" />
+    <ClInclude Include="grade.h" />
+    <ClInclude Include="player.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

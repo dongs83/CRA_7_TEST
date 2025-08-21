@@ -1,5 +1,4 @@
-//#ifdef _DEBUG
-#if 0
+#ifdef _DEBUG
 #include "gmock/gmock.h"
 int main(void) {
 	::testing::InitGoogleMock();
@@ -8,8 +7,7 @@ int main(void) {
 #else
 
 #include <iostream>
-#include "main.h"
-#include "attendanceManager.cpp"
+#include "attendanceManager.h"
 using namespace std;
 
 attendanceManager& mgr = attendanceManager::getInstance();

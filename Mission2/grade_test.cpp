@@ -1,33 +1,36 @@
 #include "gmock/gmock.h"
-#include "grade.cpp"
+#include "grade.h"
 using namespace testing;
 
 TEST(GradeTest, GoldGradeName) {
     GoldGrade g;
-    EXPECT_EQ(g.getName(), "Gold");
+    EXPECT_EQ(g.getName(), GOLD);
 }
 
 TEST(GradeTest, SilverGradeName) {
     SilverGrade s;
-    EXPECT_EQ(s.getName(), "Silver");
+    EXPECT_EQ(s.getName(), SILVER);
 }
 
 TEST(GradeTest, NormalGradeName) {
     NormalGrade n;
-    EXPECT_EQ(n.getName(), "Normal");
+    EXPECT_EQ(n.getName(), NORMAL);
 }
 
 TEST(GradeTest, MakeGoldGrade) {
-    auto grade = GradeFactory::createGrade(54);
-    EXPECT_EQ(grade->getName(), "Gold");
+    GradeFactory gf;
+    auto grade = gf.createGrade(54);
+    EXPECT_EQ(grade->getName(), GOLD);
 }
 
 TEST(GradeTest, MakeSilverGrade) {
-    auto grade = GradeFactory::createGrade(34);
-    EXPECT_EQ(grade->getName(), "Silver");
+    GradeFactory gf;
+    auto grade = gf.createGrade(34);
+    EXPECT_EQ(grade->getName(), SILVER);
 }
 
 TEST(GradeTest, MakeNormalGrade) {
-    auto grade = GradeFactory::createGrade(14);
-    EXPECT_EQ(grade->getName(), "Normal");
+    GradeFactory gf;
+    auto grade = gf.createGrade(14);
+    EXPECT_EQ(grade->getName(), NORMAL);
 }
