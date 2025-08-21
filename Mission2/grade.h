@@ -12,28 +12,28 @@ namespace {
 	static const int SCORE_FOR_SILVER = 30;
 };
 
-class Grade {
+class grade {
 public:
 	virtual std::string getName() const = 0;
 };
 
-class GoldGrade : public Grade {
+class goldGrade : public grade {
 public:
 	std::string getName() const override;
 };
 
-class SilverGrade : public Grade {
+class silverGrade : public grade {
 public:
 	std::string getName() const override;
 };
 
-class NormalGrade : public Grade {
+class normalGrade : public grade {
 public:
 	std::string getName() const override;
 };
 
-class GradeFactory {
+class gradeFactory {
 public:
-	std::unique_ptr<Grade> createGrade(int score);
+	std::unique_ptr<grade> createGrade(int score);
 	bool isFailedGrade(int score);
 };

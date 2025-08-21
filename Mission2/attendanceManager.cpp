@@ -74,24 +74,24 @@ void attendanceManager::addData(std::string name, std::string day) {
 	}
 
 	curPlayer->dayCount[indexToAdd]++;
-	curPlayer->totalScore += pointToAdd;
+	curPlayer->totalPoint += pointToAdd;
 }
 
 void attendanceManager::applyBonus() {
 	for (auto& p : players) {
-		if (p->wedCount >= 10) p->totalScore += 10;
-		if (p->weekendCount >= 10) p->totalScore += 10;
+		if (p->wedCount >= 10) p->totalPoint += 10;
+		if (p->weekendCount >= 10) p->totalPoint += 10;
 	}
 }
 
 void attendanceManager::printResults() {
-	GradeFactory gf;
+	gradeFactory gf;
 
 	for (auto& p : players) {
-		auto grade = gf.createGrade(p->totalScore);
+		auto grade = gf.createGrade(p->totalPoint);
 
 		std::cout << "NAME : " << p->name << ", ";
-		std::cout << "POINT : " << p->totalScore << ", ";
+		std::cout << "POINT : " << p->totalPoint << ", ";
 		std::cout << "GRADE : " << grade->getName() << "\n";
 	}
 
@@ -109,8 +109,8 @@ void attendanceManager::printResults() {
 
 bool attendanceManager::isNeededToBeRemoved(player* p)
 {
-	GradeFactory gf;
-	if (gf.isFailedGrade(p->totalScore) &&
+	gradeFactory gf;
+	if (gf.isFailedGrade(p->totalPoint) &&
 		p->wedCount == 0 && p->weekendCount == 0) {
 
 		return true;

@@ -10,11 +10,11 @@ int main(void) {
 #include "attendanceManager.h"
 using namespace std;
 
-attendanceManager& mgr = attendanceManager::getInstance();
+attendanceManager& atManager = attendanceManager::getInstance();
 
 int main() {
-	mgr.readFileAndMakeList("attendance_weekday_500.txt", 500);
-	mgr.applyBonus();
-	mgr.printResults();
+	atManager.readFileAndMakeList("attendance_weekday_500.txt", 500);
+	atManager.applyBonus();
+	atManager.printResults();
 }
 #endif

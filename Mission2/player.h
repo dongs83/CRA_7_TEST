@@ -6,7 +6,7 @@ public:
     int id;
     std::string name;
     std::string day;
-    int totalScore;
+    int totalPoint;
     int wedCount;
     int weekendCount;
     int dayCount[7] = { 0, };
@@ -16,7 +16,7 @@ public:
         name = _name;
         day = _day;
 
-        totalScore = 0;
+        totalPoint = 0;
         wedCount = 0;
         weekendCount = 0;
     }

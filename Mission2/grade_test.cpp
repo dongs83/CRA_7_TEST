@@ -2,35 +2,47 @@
 #include "grade.h"
 using namespace testing;
 
-TEST(GradeTest, GoldGradeName) {
-    GoldGrade g;
-    EXPECT_EQ(g.getName(), GOLD);
+TEST(gradeTest, goldGradeName) {
+	goldGrade g;
+	EXPECT_EQ(g.getName(), GOLD);
 }
 
-TEST(GradeTest, SilverGradeName) {
-    SilverGrade s;
-    EXPECT_EQ(s.getName(), SILVER);
+TEST(gradeTest, silverGradeName) {
+	silverGrade s;
+	EXPECT_EQ(s.getName(), SILVER);
 }
 
-TEST(GradeTest, NormalGradeName) {
-    NormalGrade n;
-    EXPECT_EQ(n.getName(), NORMAL);
+TEST(gradeTest, normalGradeName) {
+	normalGrade n;
+	EXPECT_EQ(n.getName(), NORMAL);
 }
 
-TEST(GradeTest, MakeGoldGrade) {
-    GradeFactory gf;
-    auto grade = gf.createGrade(54);
-    EXPECT_EQ(grade->getName(), GOLD);
+TEST(gradeTest, makeGoldGrade) {
+	gradeFactory gf;
+	auto grade = gf.createGrade(54);
+	EXPECT_EQ(grade->getName(), GOLD);
 }
 
-TEST(GradeTest, MakeSilverGrade) {
-    GradeFactory gf;
-    auto grade = gf.createGrade(34);
-    EXPECT_EQ(grade->getName(), SILVER);
+TEST(gradeTest, makeSilverGrade) {
+	gradeFactory gf;
+	auto grade = gf.createGrade(34);
+	EXPECT_EQ(grade->getName(), SILVER);
 }
 
-TEST(GradeTest, MakeNormalGrade) {
-    GradeFactory gf;
-    auto grade = gf.createGrade(14);
-    EXPECT_EQ(grade->getName(), NORMAL);
+TEST(gradeTest, makeNormalGrade) {
+	gradeFactory gf;
+	auto grade = gf.createGrade(14);
+	EXPECT_EQ(grade->getName(), NORMAL);
+}
+
+TEST(gradeTest, makePassGrade) {
+	gradeFactory gf;
+
+	EXPECT_EQ(gf.isFailedGrade(64), false);
+}
+
+TEST(gradeTest, makeFailGrade) {
+	gradeFactory gf;
+
+	EXPECT_EQ(gf.isFailedGrade(14), true);
 }

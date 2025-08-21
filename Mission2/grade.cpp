@@ -2,25 +2,25 @@
 #include <iostream>
 #include "grade.h"
 
-std::string GoldGrade::getName() const {
+std::string goldGrade::getName() const {
 	return GOLD;
 }
 
-std::string SilverGrade::getName() const {
+std::string silverGrade::getName() const {
 	return SILVER;
 }
 
-std::string NormalGrade::getName() const {
+std::string normalGrade::getName() const {
 	return NORMAL;
 }
 
-std::unique_ptr<Grade> GradeFactory::createGrade(int score) {
-	if (score >= SCORE_FOR_GOLD) return std::make_unique<GoldGrade>();
-	if (score >= SCORE_FOR_SILVER) return std::make_unique<SilverGrade>();
-	return std::make_unique<NormalGrade>();
+std::unique_ptr<grade> gradeFactory::createGrade(int score) {
+	if (score >= SCORE_FOR_GOLD) return std::make_unique<goldGrade>();
+	if (score >= SCORE_FOR_SILVER) return std::make_unique<silverGrade>();
+	return std::make_unique<normalGrade>();
 }
 
-bool GradeFactory::isFailedGrade(int score) {
+bool gradeFactory::isFailedGrade(int score) {
 	if (score < SCORE_FOR_SILVER)
 		return true;
 
